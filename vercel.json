@@ -1,0 +1,20 @@
+{
+  "functions": {
+    "api/index.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "routes": [
+    { "src": "/", "dest": "/api" },
+    { "src": "/download", "dest": "/api/download" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ]
+}
